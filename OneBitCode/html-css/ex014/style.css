@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+* {
+   margin: 0%;
+   padding: 0%;
+   box-sizing: border-box;
+}
+
+.container {
+   display: grid;
+   grid-template-columns: 1fr 2fr 1fr 1fr;
+   grid-template-rows: minmax(310px, auto);
+   gap: 10px 15px;
+   background-color: darkgray;
+   height: 100%;
+   
+}
+
+.item {
+   background-color: white;
+   font-size: 30px;
+   border: 1px solid black;
+   padding: 10px;
+}
