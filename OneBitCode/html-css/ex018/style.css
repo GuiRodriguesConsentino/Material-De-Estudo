@@ -19,17 +19,18 @@ html, body {
 header, footer {
    background-color: #292929;
    min-height: 80px;
-   padding: 30px;
+   width: 100%;
+   gap: 10px 30px;
+   padding: 10px 30px;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
    align-items: center;
-   gap: 10px 15px;
+   
 }
 
 header > nav > ul > li {
    display: inline-flex;
-   padding: 8px;
    color: white;
    border: 2px solid transparent;
    cursor: pointer;
@@ -111,3 +112,4 @@ footer > a {
    text-decoration: none;
    font-size: 20px;
 }
+
