@@ -4,31 +4,33 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Antes e Depois</title>
    <style>
       body {
-         background-color: chartreuse;
+         background-color: cornflowerblue;
          text-align: center;
          font-size: 20pt;
       }
 
       input {
          padding: 20px;
-         font-size: large;
+         font-size: medium;
          border-radius: 20px;
       }
    </style>
 </head>
 <body>
-   <h1>Boas-vindas</h1>
-   <div>
-      <input type="button" value="Inicie o Desafio" onclick="clicar()">
+   <h1>Antes e Depois!</h1>
+   <div onclick="clicar()">
+      <input type="button" value="Antecessor e Sucessor">
    </div>
    <script>
       function clicar() {
-         let nome = window.prompt('Qual é o seu nome?')
-         let idade = window.prompt(`Olá ${nome}, qual é sua idade?`)
-         alert(`Acabei de conhecer ${nome}, que tem ${idade} anos.`)
+         let numero = window.prompt("Digite um número inteiro!")
+         let num = Number(numero)
+         let antes = num - 1
+         let dps = num + 1
+         alert(`Antes do ${num} vem o ${antes}, e depois o ${dps}!`)
       }
    </script>
 </body>
