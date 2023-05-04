@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Conversor de Temperaturas</title>
+      <style>
+      body {
+         background-color: chartreuse;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+      }
+   </style>   
+</head>
+<body>
+   <h1>Conversor de Temperaturas</h1>
+   <div>
+      <input type="button" value="Converter" onclick="converter()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para iniciar.</p>
+   </div>
+   <script>
+      function converter() {
+         let grau = Number(window.prompt(`Digite uma temperatura em ºC (grau Celsius)!`))
+         let res = document.getElementById('res')
+         let k = grau + 273.15
+         let f = (grau * 9 / 5) + 32
+         res.innerHTML = `<h2>A temperatura de ${grau}ºC, corresponde a...</h2>`
+         res.innerHTML += `<p>${k}ºK (Kelvin)</p>`
+         res.innerHTML += `<p>${f}ºF (Fahrenheit)</p>`
+      }
+   </script>
+</body>
+</html>
