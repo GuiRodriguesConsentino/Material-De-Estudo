@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Conversor de Reais para dólar</title>
+      <style>
+      body {
+         background-color: gold;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Conversor de Reais para dólar</h1>
+   <div>
+      <input type="button" value="Converter" onclick="converter()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para iniciar.</p>
+   </div>
+   <script>
+      function converter() {
+         let cota = Number(window.prompt('Antes de mais nada. Quanto esta a cotação do dólar agora'))
+         let real = Number(window.prompt('Quantos R$ você tem na carteira?'))
+         let res = document.getElementById('res')
+         let dolar = (real / cota).toFixed(2)
+         res.innerHTML = `<p>Você tem ${dolar}US$ em sua carteira</p>`
+      }
+   </script>
+</body>
+</html>
