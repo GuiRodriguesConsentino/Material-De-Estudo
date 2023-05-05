@@ -30,7 +30,7 @@
          let item = window.prompt('Qual o produtos que está comprando?')
          let valor = Number(window.prompt(`Quando custa ${item} que você está comprando?`))
          let pagar = Number(window.prompt(`Qual foi o valor que você deu para pagar ${item}`))
-         let troco = pagar - valor
+         let troco = (pagar - valor).toFixed(2)
          alert(`
          Você comprou ${item} que custou ${valor}.
          Deu ${pagar} em dinheiro e vai receber ${troco} de troco. 

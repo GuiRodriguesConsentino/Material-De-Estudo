@@ -7,7 +7,7 @@
    <title>Conversor de medidas</title>
    <style>
       body {
-         background-color: gold;
+         background-color: yellowgreen;
          text-align: center;
          font-size: 15pt;
       }
@@ -31,12 +31,12 @@
       function converter() {
          let m = Number(window.prompt(`Digite uma distância em metros (m)`))
          let res = document.getElementById('res')
-         let km = m / 1000
-         let hm = m / 100
-         let dam = m / 10
-         let dm = m * 10
-         let cm = m * 100
-         let mm = m * 1000
+         let km = (m / 1000).toFixed(3)
+         let hm = (m / 100).toFixed(3)
+         let dam = (m / 10).toFixed(3)
+         let dm = (m * 10).toFixed(3)
+         let cm = (m * 100)
+         let mm = (m * 1000)
          res.innerHTML = `<h2>A distância de ${m} metros, corresponde a...</h2>`
          res.innerHTML += `<p>${km} quilômetros (Km)</p>`
          res.innerHTML += `<p>${hm} hectômetros (Hm)</p>`
