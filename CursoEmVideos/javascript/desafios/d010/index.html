@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fórmula de Bhaskara</title>
+   <style>
+      body {
+         background-color: khaki;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+      }
+
+      strong {
+         font-style: italic;
+      }
+   </style>
+</head>
+<body>
+   <h1>Resolvendo Bhaskara</h1>
+   <div>
+      <input type="button" value="Calcular" onclick="calcular()">
+   </div>
+   <div id="res">
+      <p>Considerando uma equação no formato <strong>ax<sup>2</sup> + bx + c = 0</strong>, aperte o botão acima para calcular o valor de Δ</p>
+   </div> 
+   <script>
+      function calcular() {
+         let a = Number(window.prompt(`Qual é o valor do A?`))
+         let b = Number(window.prompt(`Qual é o valor do B?`))
+         let c = Number(window.prompt(`Qual é o valor do C?`))
+         let total = b ** 2 - 4 * a * c
+         let res = document.getElementById(`res`)
+         res.innerHTML = `<h2>Resolvendo Bhaskara</h2>`
+         res.innerHTML += `<p>A equação atual é <strong>${a}x<sup>2</sup> + ${b}x + c = 0</strong></p>`
+         res.innerHTML += `<p>O cálculo realizado será Δ<strong> = ${b}<sup>2</sup> - 4 . ${a} . ${c}</strong></p>`
+         res.innerHTML += `<p>O valor calculado foi Δ<strong> = ${total}</strong></p>`
+      }
+   </script>
+</body>
+</html>
