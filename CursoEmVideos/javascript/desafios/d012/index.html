@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Preço mudou</title>
+   <style>
+      body {
+         background-color: darkmagenta;
+         text-align: center;
+         font-size: 15pt;
+         color: white;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Preço mudou</h1>
+   <div>
+      <input type="button" value="Verificar" onclick="verificar()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para analisar a mudança de preço.</p>
+   </div>
+   <script>
+      function verificar() {
+         let antes = Number(window.prompt(`Qual era o preço anterior do produto`)).toFixed(2)
+         let atual = Number(window.prompt(`Qual é o preço atual do produto?`)).toFixed(2)
+         let subiu = (atual - antes).toFixed(2)
+         let caiu = (antes - atual).toFixed(2)
+         let porcentagem = (subiu / antes * 100).toFixed(1)
+         let res = document.getElementById('res')
+         res.innerHTML = `<h2>Analisando os valores informados</h2>`
+         res.innerHTML += `<p>O produto custava R$ ${antes} e agora custa R$ ${atual}</p>`
+         if (antes < atual) {
+            res.innerHTML += `<p>Hoje o produto está mais caro.</p>`
+            res.innerHTML += `<p>O preço subiu R$ ${subiu} em relação ao preço anterior.</p>`
+            res.innerHTML += `<p>Uma variação de ${porcentagem}% para cima.</p>`
+         } else if (antes > atual) {
+            res.innerHTML += `<p>Hoje o produto está mais barato.</p>`
+            res.innerHTML += `<p>O preço caiu R$ ${caiu} em relação ao preço anterior.</p>`
+            res.innerHTML += `<p>Uma variação de ${porcentagem}% para baixo.</p>`
+         } else {
+            res.innerHTML = `<p>O preço continua o mesmo, no valor de R$ ${atual}.</p>`
+         }
+      } 
+   </script>
+</body>
+</html>
