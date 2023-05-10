@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Situação do aluno</title>
+   <style>
+      body {
+         background-color: greenyellow;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Situação do aluno</h1>
+   <div>
+      <input type="button" value="Entrar com as notas" onclick="calcular()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para informar as notas do aluno.</p>
+   </div>
+   <script>
+      function calcular() {
+         let nome = window.prompt(`Qual é o nome do aluno?`)
+         let n1 = Number(window.prompt(`Primeira nota de ${nome}:`))
+         let n2 = Number(window.prompt(`Segunda nota de ${nome}:`))
+         let media = ((n1 + n2) / 2).toFixed(1)
+         let res = document.getElementById('res')
+         res.innerHTML = `<h2>Analisando a situação de ${nome}</h2>`
+         res.innerHTML += `<p>Com as notas ${n1} e ${n2}, a média é <strong>${media}</strong></p>`
+         if (media < 3) {
+            res.innerHTML += `<p>Com a média abaixo de 3.0, o aluno está <strong>REPROVADO</strong></p>`
+         } else if (media < 6) {
+            res.innerHTML += `<p>Com a média entre 3.0 e 6.0, o aluno está de <strong>RECUPERAÇÃO</strong></p>`
+         } else {
+            res.innerHTML += `<p>Com a média acima de 6.0, o aluno está <strong>APROVADO</strong></p>`
+         } 
+      }
+   </script>
+</body>
+</html>
