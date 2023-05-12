@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cadastro</title>
+   <style>
+      body {
+         background-color: blueviolet;
+         text-align: center;
+         font-size: larger;
+         color: white;
+      }
+
+      input {
+         padding: 10px;
+         border-radius: 10px;
+         font-size: medium;
+      }
+   </style>
+</head>
+<body>
+   <h1>Cadastro</h1>
+   <div>
+      <input type="button" value="Coloque suas informações" onclick="informacoes()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima, para iniciar seu cadastro.</p>
+   </div>
+
+   <script>
+      function informacoes() {
+      let nome = prompt(`Qual é seu nome primeiro nome?`)
+      let sobrenome = prompt(`${nome} qual é seu sobrenome?`)
+      let campo = prompt(`${nome} ${sobrenome} qual é o seu campo de estudo?`)
+      let data = Number(prompt(`${nome} ${sobrenome} qual é sua data de nascimento?`))
+      let idade = 2023 - data
+      let res = document.getElementById('res')
+
+      res.innerHTML = 
+      `<p>
+         Nome completo: ${nome} ${sobrenome} <br>
+         Idade: ${idade} <br>
+         Campo de estudo: ${campo}.
+      </p>`
+      res.innerHTML += `<p><strong>Cadastro concluído!</strong></p>`
+      }
+   </script>
+</body>
+</html>
