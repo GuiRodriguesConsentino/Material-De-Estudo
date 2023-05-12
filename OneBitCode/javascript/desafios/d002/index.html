@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calculadora de 4 operadores</title>
+   <style>
+      body {
+         background-color: coral;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Calculadora de 4 operadores</h1>
+   <div>
+      <input type="button" value="Calcular" onclick="calcular()">
+   </div>
+   <div id="res">
+      <p>Click no botão acima para iniciar a conta.</p>
+   </div>
+
+   <script>
+      function calcular() {
+         let n1 = Number(prompt(`Insira o primeiro número`))
+         let n2 = Number(prompt(`insira o segundo número`))
+         let soma = n1 + n2
+         let subtração = n1 - n2
+         let divisão = n1 / n2
+         let multiplicação = n1 * n2
+         let res = document.getElementById('res')
+         res.innerHTML = `<h2>As 4 operações de ${n1} e ${n2} são:</h2>` 
+         res.innerHTML += `<p>Soma: <strong>${soma}</strong>.</p>`
+         res.innerHTML += `<p>Subtração: <strong>${subtração}</strong>.</p>`
+         res.innerHTML += `<p>Divisão: <strong>${divisão}</strong>.</p>`
+         res.innerHTML += `<p>Multiplicação: <strong>${multiplicação}</strong>.</p>`
+      }
+   </script>
+</body>
+</html>
