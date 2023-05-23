@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Velocidade</title>
+   <style>
+      body {
+         background-color: chocolate;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+         margin-bottom: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Teste de Velocidade</h1>
+   <div>
+      <input type="button" value="Testar" onclick="testar()">
+   </div>
+   <div id="res">
+      <p>Aperte o botão acima para testar a velocidade.</p>
+   </div>
+   <script>
+      function testar() {
+         let vel1 = Number(prompt(`Insira a velocidade do primeiro veiculo`))
+         let vel2 = Number(prompt(`Insira a velocidade do segundo veiculo`))
+         let res = document.getElementById('res')
+         if (vel1 > vel2) {
+            res.innerHTML = `<p>O veiculo um foi mais rápido com ${vel1}Km</p>`
+         } else if (vel1 < vel2) {
+            res.innerHTML = `<p>O veiculo dois foi mais rápido com ${vel2}Km</p>`
+         } else {
+            res.innerHTML = `<p>Os dois veículos tem a mesma velocidade</p>`
+         }
+      }
+   </script>
+</body>
+</html>
