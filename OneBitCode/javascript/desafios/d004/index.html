@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cálculo de Dano</title>
+   <style>
+      body {
+         background-color: cornflowerblue;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+         margin-bottom: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Cálculo de Dano</h1>
+   <div>
+      <input type="button" value="Calcular" onclick="calcular()">
+   </div>
+   <div id="res">
+      <p>Aperte o botão acima para calcular</p>
+   </div>
+   <script>
+      function calcular() {
+         let res = document.getElementById("res")
+         let atacante = prompt(`Qual é o nome do personagem atacante?`)
+         let poderDeAtaque = Number(prompt(`Qual é o poder de ataque?`))
+         let defensor = prompt(`Qual é o nome do personagem defensor?`)
+         
+         let pontosDeVida = Number(prompt(`Quantos poder de vida ele possui?`))
+         let poderDeDefesa = Number(prompt(`Qual é o poder de defesa?`))
+         let possuiEscudo = prompt(`Ele possui um escudo? (Sim/Não)`)
+
+         let danoCausado = 0
+
+         if (poderDeAtaque > poderDeDefesa && possuiEscudo === "Não") {
+            danoCausado = poderDeAtaque - poderDeDefesa
+         } else if (poderDeAtaque > poderDeDefesa && possuiEscudo === "Sim") {
+            danoCausado = (poderDeAtaque - poderDeDefesa) / 2
+         }
+
+         pontosDeVida -= danoCausado
+
+         res.innerHTML = `<p>${atacante} causou ${danoCausado} pontos de dano em ${defensor}</p>`
+         res.innerHTML += 
+         `<h2><strong>${atacante}</strong></h2>
+          <p><strong>Poder de ataque:</strong> ${poderDeAtaque}</p>` 
+         
+         res.innerHTML += 
+         `<h2><strong>${defensor}</strong></h2>
+         <p>
+            <strong>Pontos de vida:</strong> ${pontosDeVida} <br>
+            <strong>Pontos de defesa:</strong> ${poderDeDefesa} <br>
+            <strong>Possui escudo:</strong> ${possuiEscudo} <br>
+         </p>`
+      }
+   </script>
+</body>
+</html>
