@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Conversor de medidas</title>
+   <style>
+      body {
+         background-color: cadetblue;
+         color: white;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+         margin-bottom: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Conversor de medidas</h1>
+   <div>
+      <input type="button" value="Converter" onclick="Converter()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para converter!</p>
+   </div>
+   <script>
+      function Converter() {
+         let res = document.getElementById('res')
+         let metros = Number(prompt(`Insira um número em metros`))
+         let conversão = prompt(`Escolha que medida você deseja converter: \nMilímetro, Centímetro, Decímetro, Decâmetro, Hectômetro e Quilômetro.`)
+         switch (conversão) {
+            case "Milímetro":
+               mm = metros * 1000
+               res.innerHTML = `<p>${metros}m são ${mm}mm.</p>`
+               break
+            case "Centímetro":
+               cm = metros * 100
+               res.innerHTML = `<p>${metros}m são ${cm}cm.</p>`
+               break
+            case "Decímetro":
+               dm = metros * 10
+               res.innerHTML = `<p>${metros}m são ${dm}dm.</p>`
+               break
+            case "Decâmetro":
+               dam = metros / 10
+               res.innerHTML = `<p>${metros}m são ${dam}dam.</p>`
+               break
+            case "Hectômetro":
+               hm = metros / 100
+               res.innerHTML = `<p>${metros}m são ${hm}hm.</p>`
+               break
+            case "Quilômetro":
+               km = metros / 1000
+               res.innerHTML = `<p>${metros}m são ${km}km.</p>`
+               break
+            default:
+               res.innerHTML = `<p>Valor inválido, insira novamente a forma de conversão.</p>`
+         }
+      } 
+   </script>
+</body>
+</html>
