@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Visitando Novas Cidades</title>
+   <style>
+      body {
+         background-color: darkorchid;
+         color: white;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+         margin-bottom: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Verifique as cidades que você visitou</h1>
+   <div>
+      <input type="button" value="Verificar" onclick="verificar()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para iniciar.</p>
+   </div>
+   <script>
+      function verificar() {
+         let res = document.getElementById("res")
+         let nome = prompt(`Qual é o seu nome?`)
+         let cidades = ""
+         let contagem = 0
+
+         let simNao = prompt(`${nome} você já visitou alguma cidade? (Sim/Não)`)
+
+         while (simNao === "Sim") {   
+            let cidade = prompt(`Qual cidade você visitou?`)
+            cidades += ` - ${cidade} <br>`
+            contagem++
+            simNao = prompt(`${nome} você visitou mais alguma cidade? (Sim/Não)`)
+         }
+         
+         res.innerHTML = `<h2>${nome} você visitou no total ${contagem}cidades, Essas cidades são:</h2>`
+         res.innerHTML += `<p>${cidades}</p>`
+      }
+   </script>
+</body>
+</html>
