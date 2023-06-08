@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Menu interativo</title>
+   <style>
+      body {
+         background-color: brown;
+         text-align: center;
+         font-size: 15pt;
+         color: white;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+         margin-bottom: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Menu interativo</h1>
+   <div>
+      <input type="button" value="Iniciar" onclick="iniciar()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para iniciar</p>
+   </div>
+   <script>
+      function iniciar() {
+         let saldo = Number(prompt(`Insira seu saldo:`))
+         let opcao = ""
+
+         do {
+            opcao = prompt(`Seu saldo é de R$${saldo}, deseja:
+            1. Adicionar
+            2. Retirar
+            3. Encerrar    
+            `)
+
+            switch (opcao) {
+               case "1":
+                  saldo += Number(prompt(`Qual quantia deseja adicionar?`))
+                  break
+               case "2":
+                  saldo -= Number(prompt(`Qual quantia deseja retirar?`))
+                  break
+               case "3":
+                  alert(`Sua operação foi encerrada.`)
+                  break
+               default:
+                  alert(`Valor inválido tente novamente`)
+            }
+         } while (opcao !== "3")
+      }
+   </script>
+</body>
+</html>
