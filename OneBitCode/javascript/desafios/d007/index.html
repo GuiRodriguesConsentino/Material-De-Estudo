@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Menu</title>
+   <style>
+      body {
+         background-color: burlywood;
+         text-align: center;
+         font-size: 15pt;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+         margin-bottom: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Menu interativo</h1>
+   <div>
+      <input type="button" value="Iniciar" onclick="iniciar()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para iniciar.</p>
+   </div>
+   <script>
+      function iniciar() {
+         let res = document.getElementById("res")
+         let opcao = ""
+
+         do {
+            opcao = prompt(
+               "Seja bem-vindo (a)\n" +
+               "\nEscolha uma das opções abaixo:\n" +
+               "1. Opção um\n" +
+               "2. Opção dois\n" +
+               "3. Opção três\n" +
+               "4. Opção quatro\n" +
+               "5. Encerrar\n"
+            )
+            
+            switch (opcao) {
+               case "1":
+                  alert("Você escolheu a opção 1")
+                  break
+               case "2":
+                  alert("Você escolheu a opção 2")
+                  break
+               case "3":
+                  alert("Você escolheu a opção 3")
+                  break
+               case "4":
+                  alert("Você escolheu a opção 4")
+                  break
+               case "5":
+                  alert("Você encerrou!")
+               
+            }
+         } while (opcao !== "5")
+      }
+   </script>
+</body>
+</html>
