@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tabuada</title>
+   <style>
+      body {
+         background-color: darkslategray;
+         text-align: center;
+         font-size: 15pt;
+         color: white;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+         margin-bottom: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Tabuada</h1>
+   <div>
+      <input type="button" value="Iniciar" onclick="iniciar()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para começar!</p>
+   </div>
+   <script>
+      function iniciar() {
+         let res = document.getElementById('res')
+         let num = Number(prompt(`Insira um numero que deseja saber a tabuada`))
+         res.innerHTML = ""
+         for (let tab = 1; tab <= 10; tab++) {
+            res.innerHTML += `${num} x ${tab} = ${num * tab} <br>`
+         }
+      }
+   </script>
+</body>
+</html>
