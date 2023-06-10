@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Procurando Palíndromos</title>
+   <style>
+      body {
+         background-color: dimgray;
+         text-align: center;
+         font-size: 15pt;
+         color: white;
+      }
+
+      input {
+         font-size: medium;
+         padding: 10px;
+         border-radius: 10px;
+         margin-bottom: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>Procurando Palíndromos</h1>
+   <div>
+      <input type="button" value="Procurar" onclick="procurar()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para procurar um palíndromo.</p>
+   </div>
+   <script>
+      function procurar() {
+         let res = document.getElementById('res')
+         let palavra = prompt(`Informe a palavra:`)
+         palavraInvertida = ''
+
+         for (let i = palavra.length - 1; i >= 0; i--) {
+            palavraInvertida += palavra[i]
+         }
+
+         if (palavra === palavraInvertida) {
+            res.innerHTML = `<p>${palavra} é um palíndromo!</p>`
+         } else {
+            res.innerHTML = `<p>${palavra} não é um palíndromo!</p>`
+            res.innerHTML += `<p>${palavra} fica ${palavraInvertida}.</p>`
+         }
+      }
+   </script>
+</body>
+</html>
