@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pila de Cartas</title>
+      <style>
+         body {
+            background-color: firebrick;
+            text-align: center;
+            font-size: 15pt;
+            color: white;
+         }
+
+         input {
+            font-size: medium;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+         }
+      </style>
+</head>
+<body>
+   <h1>Pila de cartas</h1>
+   <div>
+      <input type="button" value="Iniciar" onclick="iniciar()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para iniciar um palíndromo.</p>
+   </div>
+   <script>
+      function iniciar() {
+         let opção = ""
+         let cartas = []
+
+         do {
+            opção = prompt(`
+            Escolha uma opção:
+            1) Adicionar carta
+            2) Remover carta
+            3) Ver cartas do baralho
+            4) Sair
+            `)
+
+            switch (opção) {
+               case "1":
+                  const AdicionarCarta = prompt(`Qual o nome da carta que deseja adicionar?`)
+                  cartas.push(AdicionarCarta)
+                  break
+               case "2":
+                  const RemoverCarta = cartas.pop()
+                  if (!RemoverCarta) {
+                     alert('Não tem carta no baralho!')
+                  } else {
+                     alert(`A carta ${RemoverCarta} foi removida.`) 
+                  }
+                  break
+               case "3": 
+                  alert(`Total de cartas: ${cartas.length} \n${cartas}`)
+                  break
+               case "4": 
+                  alert(`Você encerrou!`)
+                  break
+               default: 
+                  alert(`Valor inválido, insira novamente!`)
+            }
+         } while (opção !== "4")
+      }
+   </script>
+</body>
+</html>
