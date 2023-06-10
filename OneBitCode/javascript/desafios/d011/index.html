@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fila de espera...</title>
+      <style>
+         body {
+            background-color: darkorange;
+            text-align: center;
+            font-size: 15pt;
+            color: white;
+         }
+
+         input {
+            font-size: medium;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+         }
+      </style>
+</head>
+<body>
+   <h1>Fila de espera...</h1>
+   <div>
+      <input type="button" value="Consultar" onclick="consultar()">
+   </div>
+   <div id="res">
+      <p>Clique no botão acima para iniciar</p>
+   </div>
+
+   <script>
+      function consultar() {
+         let escolha = ""
+         let fila = []
+
+         do {
+            let paciente = ""
+            for (let i = 0; i < fila.length; i++) {
+               paciente += (`${i + 1} - ${fila[i]} \n`)
+            }
+            escolha = prompt(`
+            Olá seja bem-vindo(a), escolha uma opção:
+            1) Adicionar paciente.
+            2) Consultar paciente
+            3) Ver lista de espera.
+            4) Sair
+            `)
+
+         switch (escolha) {
+            case "1":
+               const NovoPaciente = prompt(`Qual é o nome do paciente?`)
+               fila.push(NovoPaciente)
+               break
+            case "2":
+               const pacienteConsultado = fila.shift()
+               alert(`${pacienteConsultado} foi consultado!`)
+               break
+            case "3":
+               alert(`Pacientes: \n${paciente}`)
+               break
+            case "4":
+               alert('Você encerrou a consulta')
+               break
+            default:
+               alert('Valor inválido insira novamente!')            
+            }
+            } while ( escolha !== "4")         
+      }
+   </script>
+</body>
+</html>
