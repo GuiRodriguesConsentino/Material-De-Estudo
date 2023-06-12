@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cadastro de imóveis</title>
+      <style>
+         body {
+            background-color: darkslateblue;
+            text-align: center;
+            font-size: 15pt;
+            color: white;
+         }
+
+         input {
+            font-size: medium;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+         }
+      </style>
+</head>
+<body>
+   <h1>Cadastro de imóveis</h1>
+   <div>
+      <input type="button" value="Iniciar" onclick="iniciar()">
+   </div>
+   <script>
+      function iniciar() {
+         let opção = ""
+         let imóveis = []
+         do {        
+            opção = prompt(`
+            Seja bem vindo(a) ao cadastro de imóveis!
+            Total de imóveis salvos: ${imóveis.length}
+            
+            Escolha uma opção:
+            1) Salvar um imóvel
+            2) Listar imóveis salvos
+            3) Sair
+            `)
+            
+            switch (opção) {
+               case "1":
+                  let imóvel = {}  
+                  imóvel.proprietario = prompt(`Informe o nome do proprietário?`)
+                  imóvel.quartos = prompt(`Quantos quartos possui o imóvel`)
+                  imóvel.banheiros = prompt(`Quantos banheiros possui o imóvel?`)
+                  imóvel.garagem = prompt(`O imóvel possui garagem? (Sim / Não)`)
+
+                  let confirmação = confirm(`
+                  Salvar esse imóvel?
+                  Proprietário: ${imóvel.proprietario}
+                  Quartos: ${imóvel.quartos}
+                  Banheiros: ${imóvel.banheiros}
+                  Possui garagem: ${imóvel.garagem}
+                  `)
+
+                  if (confirmação) {
+                     imóveis.push(imóvel)
+                     alert(`Imóvel salvo com sucesso!`)
+                  } else {
+                     alert(`Imóvel cancelado, voltando para menu!`)
+                  }
+                  break
+               case "2":
+                  for (let i = 0; i < imóveis.length; i++) {
+                     alert(`
+                     Imóvel ${i + 1}:
+                     Proprietário: ${imóveis[i].proprietario}
+                     Quartos: ${imóveis[i].quartos}
+                     Banheiros: ${imóveis[i].banheiros}
+                     Possui garagem: ${imóveis[i].garagem}
+                     `)
+                  }
+                  break
+               case "3":
+                  alert(`Volte sempre!`)
+                  break
+               default:
+                  alert(`Valor inválido, tente novamente!`)
+               }
+         } while (opção !== "3")
+      }
+   </script>
+</body>
+</html>
