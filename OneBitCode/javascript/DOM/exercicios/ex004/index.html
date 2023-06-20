@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Praticando a manipulação do DOM</title>
+   <script src="index.js"></script>
+   <title>Eventos no HTML</title>
+   <style>
+      body {
+         background-color: blueviolet;
+         text-align: center;
+         color: white;
+         font-size: 16pt;
+      }
+
+      input, button {
+         padding: 5px;
+         border: 0px;
+         border-radius: 6px;
+      }
+
+      li {
+         list-style: none
+      }
+
+   </style>
+</head>
+<body>
+   <h1>Praticando a manipulação do DOM</h1>
+   <hr>
+   <h2>Minha Agenda</h2>
+   <button onclick="AddContact()">Novo Contato</button>
+   <button onclick="RemoveContact()">Remover Contato</button>
+
+   <section id="contacts-list"></section>
+   
+</body>
+</html>
