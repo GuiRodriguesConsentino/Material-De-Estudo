@@ -1,0 +1,21 @@
+body {
+   background-color: #2e2d2d;
+   margin: 0%;
+   display: grid;
+   place-items: center;
+}
+
+button, input {
+   background-color: #1a1a1a;
+   border-radius: 8px;
+   border: 1px solid transparent;
+   padding: 0.6rem 1.2rem;
+   margin: 2rem;
+}
+button:hover {
+   border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+   outline: 4px auto -weblit-focus-ring-color;
+}
