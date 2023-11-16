@@ -1,9 +1,12 @@
+import { Input } from "./components/Input";
 const { useState } = require("react")
 
 function App() {
    const [password, setPassword] = useState("")
    const [copyText, setCopyText] = useState("Copiar")
-   const [passwordSize, setPasswordSize] = useState(12)
+   const [customSize, setCustomSize] = useState(12);
+   const [showInput, setShowInput] = useState(false)
+   const passwordSize = showInput ? customSize : 8
 
    function generate() {
       const characters = "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?"
@@ -25,15 +28,19 @@ function App() {
       <div className="app">
          <h1>Gerador de senhas</h1>
          <div>
-            <label htmlFor="passwordSize">Tamanho:</label>
-            <input 
-            type="number" 
-            id="passwordSize" 
-            min={1}
-            value={passwordSize}
-            onChange={(ev) => setPasswordSize(ev.target.value)} 
+            <label htmlFor="showInput">Customizar o tamanho:</label>
+            <input type="checkbox" 
+            id="showInput"
+            value={showInput}
+            onChange={() => setShowInput(currentState => !currentState)} 
             />
          </div>
+         {showInput && (
+         <div>
+            <label htmlFor="passwordSize">Tamanho:</label>
+            <Input passwordSize={customSize} setPasswordSize={setCustomSize} />
+         </div>
+         )}
          <button onClick={generate}>Gerar senha de {passwordSize} caracteres!</button>
          <button onClick={copyToClipboard}>{copyText}</button>
          <div>
