@@ -11,3 +11,5 @@ export default function Product() {
       <p>R$ {product.price}</p>
       <button>Comprar</button>
     </section>
+  );
+}
