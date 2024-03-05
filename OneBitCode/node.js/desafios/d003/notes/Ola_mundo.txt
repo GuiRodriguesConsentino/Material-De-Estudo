@@ -1,0 +1,1 @@
+Olá mundo! Essa nota foi criada em uma aplicação de terminal Node.Js.
