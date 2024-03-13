@@ -1,0 +1,23 @@
+NO TERMINAL
+
+> USE TODO_LIST2
+
+INSERIR CONTEÚDO 
+> db.checklist,insert({name: 'Primeiro checklist', task: [{name: 'Tarefa 1'}, {name: 'Tarefa 1'}]})
+OUTRA FORMA DE INSERIR
+> db.checklist.save({name: 'Checklist 2'})
+
+-----------------------------------------------
+
+MOSTRAR COLECTION 
+> db.checklist.find(AQUI VOCÊ PODE COLOCAR OQ DESEJA PROCURAR)
+
+-----------------------------------------------
+
+ATUALIZAR
+> db.checklist.update({name: 'Primeiro checklist'}, {name: 'Primeiro checklist :)})
+
+-----------------------------------------------
+
+DELETAR
+> db.checklist.deleteOne({name: 'Primeiro checklist :)'}}
