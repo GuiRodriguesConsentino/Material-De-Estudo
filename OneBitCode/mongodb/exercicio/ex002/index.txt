@@ -1,0 +1,22 @@
+RELACIONANDO DADOS
+
+MELHOR DEIXAR ID DO QUE OS NOMES EM PROPRIEDADE QUE PODE TER O MESMO NOME, POR EXEMPLO NOME DE PESSOA
+
+{
+   "_id": "5254060536050600001",
+   "nave": "apollo[id]",
+   "agencia": "nasa",
+   "tripulantes": [
+      {"nome": "Gui[id]"},
+      {"nome": 'Isa'}
+   ]
+},
+{
+   "_id": "5254060536050600002",
+   "nave": "Krawk[id]",
+   "agencia": "nasa",
+   "tripulantes": [
+      {"nome": "Julia[id]"},
+      {"nome": 'Kathy'}
+   ]
+}
