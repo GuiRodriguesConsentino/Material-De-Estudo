@@ -1,0 +1,11 @@
+> db.createColletion('task')
+> db.checklist.insert({name: 'Atividades da manhã'})
+> db.task.insert({name: 'Preparar o café', done: false})
+
+SABER O ID
+> db.task.find()
+
+LIGAR O ID
+> db.task.insertMany([{name: 'Preparar o café', done: false, checklistId: ObjectId('[NÚMERO DO ID]')}])
+
+> db.checklist.aggregate({$lookup: {from: 'task', localField: '_id', foreingField: 'checklistId', as: 'tasks'}}).pretty()
