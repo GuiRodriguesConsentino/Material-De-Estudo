@@ -1,0 +1,16 @@
+OPERADORES DB 
+
+OPERADORES SEMPRE TEM $ ANTES
+
+ $END | TODOS OS FILTROS DEVEM SER VERDADEIRO
+> db.task.find({$end: [{name: 'Preparar o café}, {done: false}])
+
+----------------------------------------------
+
+ $OR | APENAS UMA DEVE SER VERDADEIRO
+> db.task.find({$or: [{name: 'Preparar o café}, {done: true}])
+
+----------------------------------------------
+
+ $EXIST | PROCURA TODOS O QUE TIVER O CAMPO [CHECKLIST]
+> db.task.find({checklistId: {$exist: true}})
