@@ -1,0 +1,11 @@
+NO TERMINAL
+
+> require('.config/database')
+
+> const Checklist = require('/src/models/checklist');
+
+> const Task = require('/src/models/task);
+
+> let checklist = new Checklist({})
+
+> checklist.save().then(res => console.log(res)).cacth(e =>console.log(e))
