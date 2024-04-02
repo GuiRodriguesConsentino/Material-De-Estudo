@@ -1,0 +1,3 @@
+---NO TERMINAL---
+
+> npm i ejs --save
